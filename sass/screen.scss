@@ -6,10 +6,12 @@
 @import "compass/reset";
 @charset "utp-8";
 @import "bourbon";
+$FontAwesomePath: "../fonts/font-awesome/";
 @import "font-awesome";
 @include font-face(woodygoodies2nf, '../fonts/woodygoodies2nf/woodygoodies2nf-webfont');
 
 $red: #D8392F;
+$element-background: rgba(white, 0.85);
 
 * {
 	@include box-sizing(border-box);
@@ -27,7 +29,7 @@ body {
 	margin: auto;
 }
 body > header {
-	background: rgba(white, 0.85);
+	background: $element-background;
 }
 nav {
 	
@@ -88,6 +90,7 @@ nav {
 			}
 			a:hover {
 				box-shadow: inset 0px 0px 15px 0px $red;
+				
 			}
 			a:active {
 				box-shadow: inset 0px 0px 15px $red;
@@ -103,7 +106,7 @@ nav {
 	h1 {
 		margin-top: 100px;
 		line-height: 125%;
-		background: rgba(#FFFFFF, 0.8);
+		background: $element-background;
 		text-align: center;
 		text-shadow: 0px 1px 1px black;
 		color: $red;
@@ -115,16 +118,137 @@ nav {
 		}
 	}
 }
-.overview-1 {
+.overview-1, .contact-us-1 {
+	
 	width: 100%;
-	background: rgba(#FFFFFF, 0.8);
+	background: $element-background;
 	@include clearfix;
+	padding: 25px 0;
+
 	article {
-		width: calc(33.33% - 30px);
-		margin-left: 15px;
+		h2 {
+			padding: 15px;
+			line-height: 1.5;
+			color: $red;
+			i {
+				border-color: $red;
+			}
+		}
+		@include transition(background-color ease-in 1s);
+		border: 1px solid $red;
+		border-radius: 7px;
+		width: calc(33.33% - 35px);
+		margin-left: 25px;
 		float: left;
+		font-size: 1.5em;
+		
+
+		p {
+			padding: 0 15px 15px;
+			font-size: 0.75em;
+			text-indent: 1.5em;
+			
+		}
+		img {
+			width: 100%;
+			vertical-align: text-bottom;
+		}
+		
+	}
+	article:hover,.overview-1 article:focus,.overview-1 article:active {
+		background-color: white;
 	}
 	article:first-child {
-		margin-left: 0;
+		//margin-left: 0;
 	}
 }
+footer {
+	margin-top: 100px;
+	background: $element-background;
+	height: 100px;
+	font-size: 1.1em;
+	padding: 0 25px;
+	nav {
+		float: left;
+		height: 100px;
+		
+		li {
+			display: inline-block;
+			margin: 0 5px;
+			
+			a {
+				text-decoration: none;
+				color: $red;
+				line-height: 100px;
+				display: block;
+			}
+		}
+	}
+	.copyright {
+		float: right;
+		line-height: 100px;
+	}
+	
+}
+
+.contact-us {
+	
+	padding: 0 25px;
+	.label {
+		color: $red;
+		margin-top: 15px;
+		margin-bottom: 10px;
+		font-size: 1.2em;
+	}
+	label {
+		margin-top: 15px;
+		display: inline-block;
+	}
+	input {
+		display: block;
+		padding: 5px;
+		font-size: 1.3em;
+		@include placeholder {
+    		color: $red;
+    		font-size: 0.7em;
+		}
+	}
+	textarea {
+		display: block;
+	}
+		#{$all-text-inputs} {
+	  border: 1px solid green;
+	  background: white;
+	  @include transition (all 0.25s ease-in);
+	}
+	
+	#{$all-text-inputs-hover} { 
+	  	box-shadow: 0px 0px 5px $red;
+	  	@include transform(scale(1.1));
+	}
+	
+	#{$all-text-inputs-focus} { 
+	  background: white;
+	  @include transform(scale(1.1));
+	}
+	select {
+		width: 150px;
+		display: block;
+	}
+	label[for="male"], label[for="female"], label[for="both"],  label[for="sights"], label[for="architecture"], label[for="nature"] {
+		margin: 0;
+		font-size: 1.0em;
+	}
+	input[type="checkbox"], input[type="radio"] {
+		display: inline;
+	}
+	.disappear-appear {
+		padding: 5px;
+		display: none;
+		color: $red;
+		font-style: italic;
+		text-shadow: 0px 0px 5px white;
+	}
+	
+}
+
