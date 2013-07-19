@@ -1,11 +1,11 @@
 <footer>
 			<nav>
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Art</a></li>
-					<li><a href="#">Location</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="art.html">Art</a></li>
+					<li><a href="location.html">Location</a></li>
+					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</nav>
 			<div class="copyright">
